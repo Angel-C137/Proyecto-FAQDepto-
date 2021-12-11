@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.scene.control.skin.TableHeaderRow?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox spacing="20" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControladorInicioAdministrador">
+
+    <padding>
+        <Insets bottom="10" left="20" right="20" top="20" />
+    </padding>
+
+    <GridPane hgap="10" vgap="10">
+        <padding>
+            <Insets bottom="10" left="10" right="10" top="10" />
+        </padding>
+
+        <ImageView fitHeight="120" fitWidth="140">
+            <image>
+                <Image url="@../icons/logo uqroo.png" />
+            </image>
+        </ImageView>
+
+        <ImageView fitHeight="120" fitWidth="120" GridPane.columnIndex="2">
+            <image>
+                <Image url="@../icons/mascota.png" />
+            </image>
+        </ImageView>
+
+        <Text style="-fx-font-weight: bold;" text="Preguntas Frecuentes" underline="true" GridPane.columnIndex="1">
+            <font>
+                <Font name="Cambria" size="25" />
+            </font>
+        </Text>
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+      </rowConstraints>
+
+    </GridPane>
+
+   <StackPane HBox.hgrow="ALWAYS">
+       <TableView fx:id="tablapregunntas">
+           <columns>
+               <TableColumn text="Preguntas">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="preguntas"/>
+                   </cellValueFactory>
+               </TableColumn>
+               <TableColumn text="Respuestas">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="respuestas"/>
+                   </cellValueFactory>
+               </TableColumn>
+           </columns>
+       </TableView>
+   </StackPane>
+
+
+
+    <ToolBar VBox.vgrow="ALWAYS">
+        <Button onAction="#crear" text="Crear" />
+        <Button onAction="#modificar" text="Modificar" />
+        <Button onAction="#eliminar" text="Eliminar" />
+    </ToolBar>
+
+</VBox>

@@ -30,7 +30,13 @@ public class ControladorCrearCuenta implements Initializable{
 
     private int idTipo = 0;
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        crearCuentaDAO = new CrearCuentaDAO();
+    }
+
     public void inicio(ActionEvent actionEvent) {
+        System.out.println("Vuelve inicio");
     }
 
     public void unirse(ActionEvent actionEvent) {
@@ -39,26 +45,11 @@ public class ControladorCrearCuenta implements Initializable{
         cuenta.setPassword(password.getText());
         cuenta.setMatricula(matricula.getText());
         cuenta.setId(idTipo);
-        crearCuentaDAO.guardarActualizar(cuenta);
+        crearCuentaDAO.guardar(cuenta);
 
         nombreCompleto.clear();
         password.clear();
         matricula.clear();
-
-    }
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        try (Connection conexionDB = DriverManager.getConnection("jdbc:h2:./target/FAQDepto")){
-            Statement setencia = conexionDB.createStatement();
-            String sql = "CREATE TABLE IF NOT EXISTS credenciales" + "(id INTEGER auto_increment, " + "nombreCompleto VARCHAR(30), " +
-                    "password VARCHAR(20), " + "matricula VARCHAR(10))";
-            setencia.executeUpdate(sql);
-            System.out.println("Se registro un nuevo alumno");
-        } catch (Exception e){
-            throw new RuntimeException("No se pudo registrar el alumno." + e.getMessage());
-        }
 
     }
 

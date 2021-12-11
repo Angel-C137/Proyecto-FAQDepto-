@@ -11,8 +11,8 @@ public class FormularioCrearCuenta extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent contenedor = new FXMLLoader().load((getClass().getResource("/view/CrearCuenta.fxml")));
 
-        Scene scene = new Scene(contenedor,600, 400);
-        primaryStage.setScene(scene);
+        Scene sceneCrearCuenta = new Scene(contenedor,600, 400);
+        primaryStage.setScene(sceneCrearCuenta);
         primaryStage.show();
     }
 

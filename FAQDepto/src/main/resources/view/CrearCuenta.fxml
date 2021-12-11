@@ -32,8 +32,9 @@
         </image>
     </ImageView>
 
-    <ToolBar  HBox.hgrow="ALWAYS" GridPane.columnIndex="2" GridPane.rowIndex="1">
+    <ToolBar HBox.hgrow="ALWAYS" GridPane.columnIndex="2" GridPane.rowIndex="1">
         <Button onAction="#inicio" text="Inicio"/>
+
         <Button onAction="#unirse" text="Unirse"/>
     </ToolBar>
 

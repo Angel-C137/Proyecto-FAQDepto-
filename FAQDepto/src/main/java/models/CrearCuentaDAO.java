@@ -14,13 +14,9 @@ public class CrearCuentaDAO {
 
     public CrearCuentaDAO(){}
 
-    public void guardarActualizar(CrearCuenta cuenta){
-        if(cuenta.getId() == 0){
-            guardar(cuenta);
-        } else {
-            actualizar(cuenta);
-        }
-    }
+    /*public void guardarActualizar(CrearCuenta cuenta){
+        guardar(cuenta);
+    }*/
 
     public void guardar(CrearCuenta cuenta){
         try(Connection conexionDB = DriverManager.getConnection(URL_CONEXION,USUARIO,PASSWORD)){
@@ -32,7 +28,7 @@ public class CrearCuentaDAO {
             throw new RuntimeException("Error al registrarse." + e.getMessage());
         }
     } //guardar
-
+/*
     public void actualizar(CrearCuenta cuenta){
         try (Connection conexionDB = DriverManager.getConnection(URL_CONEXION, USUARIO, PASSWORD)){
             Statement statement = conexionDB.createStatement();
@@ -44,7 +40,8 @@ public class CrearCuentaDAO {
             throw new RuntimeException("Error al actualizar." + e.getMessage());
         }
     } //actualizar
-
+*/
+    /*
     public List<CrearCuenta> buscarTodo(){
         List<CrearCuenta> cuentas = new ArrayList<>();
 
@@ -76,5 +73,6 @@ public class CrearCuentaDAO {
             throw new RuntimeException("Error al eliminar." + e.getMessage());
         }
     } //eliminar
+    */
 
 } //CrearCuenta
